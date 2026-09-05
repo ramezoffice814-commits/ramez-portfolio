@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رامز // مبني أنظمة مدفوعة بالذكاء الاصطناعي</title>
+<meta name="description" content="رامز — طالب CIS بيبني منصات إنتاجية حقيقية: ماركت بليس، أنظمة CRM، جدران حماية أمنية، وأتمتة multi-agent">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>">
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">R<span>/</span>X</div>
+    <div class="preloader-bar"><span id="preloaderFill"></span></div>
+    <div class="preloader-percent" id="preloaderPercent">00%</div>
+  </div>
+  <div class="preloader-lines">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== BACKGROUND FX ===== -->
+<canvas id="bgCanvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="scanline"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <a href="#home" class="nav-logo" data-cursor="link">
+    <span class="logo-bracket">[</span>RAMEZ<span class="logo-bracket">]</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link active" data-cursor="link"><span>01</span> الرئيسية</a>
+    <a href="#about" class="nav-link" data-cursor="link"><span>02</span> نبذة</a>
+    <a href="#stack" class="nav-link" data-cursor="link"><span>03</span> الأدوات</a>
+    <a href="#work" class="nav-link" data-cursor="link"><span>04</span> الأعمال</a>
+    <a href="#contact" class="nav-link" data-cursor="link"><span>05</span> تواصل</a>
+  </nav>
+  <div class="nav-status">
+    <span class="status-dot"></span> متاح للعمل
+  </div>
+  <a href="en/index.html" class="lang-switch" data-cursor="link">EN</a>
+  <button class="nav-toggle" id="navToggle" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-frame">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+    </div>
+
+    <div class="hero-meta hero-meta-left">
+      <p class="vertical-text">SYSTEM.ONLINE_</p>
+    </div>
+    <div class="hero-meta hero-meta-right">
+      <p class="vertical-text">EST.2026_</p>
+    </div>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal-up">
+        <span class="eyebrow-dot"></span> RAMEZ / BUILDER LOG — REV. 2026
+      </p>
+
+      <h1 class="hero-title">
+        <span class="line reveal-up">بصمم وأبني</span>
+        <span class="line reveal-up glitch-wrap">
+          <span class="glitch-text" data-text="أنظمة بالذكاء الاصطناعي،">أنظمة بالذكاء الاصطناعي،</span>
+        </span>
+        <span class="line reveal-up">مش مجرد تطبيقات.</span>
+      </h1>
+
+      <p class="hero-desc reveal-up">
+        طالب CIS بيبني منصات إنتاجية حقيقية — ماركت بليس، أنظمة CRM، جدران حماية أمنية،
+        وأتمتة multi-agent — باستخدام الذكاء الاصطناعي كشريك بناء، مش مجرد شعار تسويقي.
+      </p>
+
+      <div class="hero-cta reveal-up">
+        <a href="#work" class="btn btn-primary magnetic" data-cursor="button">
+          <span>شوف أعمالي</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic" data-cursor="button">
+          <span>تواصل معايا</span>
+        </a>
+      </div>
+
+      <div class="info-strip reveal-up">
+        <div class="info-strip-item">
+          <p class="info-strip-label">المجال</p>
+          <p class="info-strip-value">ويب · Flutter · أتمتة</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">التركيز الحالي</p>
+          <p class="info-strip-value">تنسيق AI agents</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">الحالة</p>
+          <p class="info-strip-value">7 أنظمة شغالة، واحد قيد التطوير</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">مقيم في</p>
+          <p class="info-strip-value">مصر</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>مرر لتكتشف</span>
+      <div class="scroll-line"><span></span></div>
+    </div>
+
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>FLUTTER&nbsp;•&nbsp;NEXT.JS&nbsp;•&nbsp;SUPABASE&nbsp;•&nbsp;GEMINI&nbsp;•&nbsp;OPENROUTER&nbsp;•&nbsp;N8N&nbsp;•&nbsp;META ADS&nbsp;•&nbsp;</span>
+        <span>FLUTTER&nbsp;•&nbsp;NEXT.JS&nbsp;•&nbsp;SUPABASE&nbsp;•&nbsp;GEMINI&nbsp;•&nbsp;OPENROUTER&nbsp;•&nbsp;N8N&nbsp;•&nbsp;META ADS&nbsp;•&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <span class="section-index">// 02</span>
+      <h2 class="section-title reveal-up">نبذة <span class="text-accent">عني</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual reveal-up">
+        <div class="about-card">
+          <div class="about-card-glow"></div>
+          <div class="orbit-wrap">
+            <div class="orbit orbit-1"><span class="orbit-dot">⚛</span></div>
+            <div class="orbit orbit-2"><span class="orbit-dot">▲</span></div>
+            <div class="orbit orbit-3"><span class="orbit-dot">◆</span></div>
+            <div class="core">
+              <span>&lt;/&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>builder.json</p>
+          </div>
+          <pre class="terminal-body"><code>{
+  "name": "Ramez",
+  "role": "CIS Student / Builder",
+  "based_in": "Egypt",
+  "stack": ["Flutter","Next.js","Supabase"],
+  "focus": "multi-agent orchestration",
+  "systems_live": 7,
+  "coffee_level": "critical"
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="about-lead reveal-up">
+          أنا طالب CIS في السنة التانية، بس معظم شغلي بيحصل بره المحاضرات. بابني منصات
+          حقيقية شغالة — ماركت بليسز، أنظمة CRM، أدوات أمان، وأنظمة أتمتة — لمستخدمين
+          وعملاء حقيقيين، مش واجبات كلية.
+        </p>
+        <p class="about-text reveal-up">
+          طريقتي في التطوير معتمدة على الذكاء الاصطناعي: بستخدم أدواته عشان أتحرك بسرعة،
+          بس كل نظام بطلّعه بافهمه بالكامل — الـ architecture، الـ tradeoffs، وحالات
+          الفشل المحتملة. وجنب البرمجة، بشغّل حملات إعلانية مدفوعة على السوشيال ميديا،
+          فبفكر في المنتج كحاجة محتاجة تجيب مستخدمين، مش بس تشتغل.
+        </p>
+        <p class="about-text reveal-up">
+          دلوقتي بتعمق أكتر في multi-agent orchestration — تنسيق عشرات الـ AI agents
+          المتخصصة عشان تنجز شغل مش ممكن موديل واحد يعمله لوحده.
+        </p>
+
+        <div class="about-info reveal-up">
+          <div class="info-item">
+            <p class="info-label">الاسم</p>
+            <p class="info-value">رامز</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">البريد</p>
+            <p class="info-value">ramezoffice814@gmail.com</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">الموقع</p>
+            <p class="info-value">مصر</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">التوفر</p>
+            <p class="info-value"><span class="status-dot"></span> متاح للعمل</p>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary magnetic reveal-up" data-cursor="button">
+          <span>يلا نتكلم</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE STACK ===== -->
+  <section class="section stack" id="stack">
+    <div class="section-head">
+      <span class="section-index">// 03</span>
+      <h2 class="section-title reveal-up">الأدوات <span class="text-accent">الأساسية</span></h2>
+      <p class="section-desc reveal-up">الأدوات اللي فعلاً بشتغل بيها — مش checklist، خط إنتاج شغال بجد.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">📱</span>
+        <p class="stack-label">موبايل</p>
+        <p class="stack-value">Flutter</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🌐</span>
+        <p class="stack-label">ويب</p>
+        <p class="stack-value">Next.js</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🗄</span>
+        <p class="stack-label">Backend / قاعدة بيانات</p>
+        <p class="stack-value">Supabase</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🤖</span>
+        <p class="stack-label">ذكاء اصطناعي</p>
+        <p class="stack-value">Gemini, OpenRouter</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">⚙</span>
+        <p class="stack-label">أتمتة</p>
+        <p class="stack-value">n8n</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">📈</span>
+        <p class="stack-label">النمو</p>
+        <p class="stack-value">Meta Ads</p>
+      </div>
+    </div>
+
+    <div class="tech-orbit-strip reveal-up">
+      <div class="tech-chip">Flutter</div>
+      <div class="tech-chip">Next.js</div>
+      <div class="tech-chip">Supabase</div>
+      <div class="tech-chip">Gemini</div>
+      <div class="tech-chip">OpenRouter</div>
+      <div class="tech-chip">n8n</div>
+      <div class="tech-chip">Row Level Security</div>
+      <div class="tech-chip">JWT</div>
+      <div class="tech-chip">OWASP Top 10</div>
+      <div class="tech-chip">Postgres</div>
+      <div class="tech-chip">Tavily</div>
+      <div class="tech-chip">Shopify</div>
+      <div class="tech-chip">Meta Ads</div>
+    </div>
+  </section>
+
+  <!-- ===== WORK / PROJECTS ===== -->
+  <section class="section work" id="work">
+    <div class="section-head">
+      <span class="section-index">// 04</span>
+      <h2 class="section-title reveal-up">أعمال <span class="text-accent">مختارة</span></h2>
+      <p class="section-desc reveal-up">8 أنظمة حقيقية اتبنت لمستخدمين فعليين — من ماركت بليس شغال لحد تجربة أتمتة بـ100 agent.</p>
+    </div>
+
+    <div class="filter-bar reveal-up">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="web">ويب</button>
+      <button class="filter-btn" data-filter="mobile">موبايل</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="automation">أتمتة</button>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- 1. SUCCESS Marketplace -->
+      <article class="work-card reveal-up tilt" data-category="web">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="assets/succses/landing.jpg" alt="الصفحة الرئيسية لـ SUCCESS Marketplace">
+            <div class="work-media-badges">
+              <span class="mock-badge">01</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">ماركت بليس</span>
+            <h3>SUCCESS Marketplace</h3>
+            <p class="work-oneliner">ماركت بليس مبني على الثقة لبيع وشراء المواقع ومشاريع البرمجة.</p>
+            <p>المشترين لمواقع ومشاريع برمجية مفيش قدامهم طريقة موثوقة يتأكدوا بيها من اللي بيشتروه قبل ما يدفعوا. SUCCESS بيحل المشكلة دي بقوائم مراجَعة من الإدارة، تحميلات موثّقة، ومكتبة للمشتري — كل قائمة بتتفحص قبل ما تتنشر، وبس المشترين الحقيقيين يقدروا يكتبوا تقييم.</p>
+            <div class="work-stack"><span>قوائم مراجَعة إدارية</span><span>تقييمات موثّقة</span><span>مكتبة المشتري</span></div>
+            <div class="work-links">
+              <a href="https://success-marketplace.onrender.com/" target="_blank" rel="noopener" data-cursor="link">زيارة الموقع اللايف ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Law Office Management System -->
+      <article class="work-card reveal-up tilt" data-category="mobile">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">02</span>
+              <span class="status-badge status-live">LIVE</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">مشروع عميل — خاص</span>
+            <h3>نظام إدارة مكتب محاماة</h3>
+            <p>مكتب محاماة كان محتاج يحوّل شغله من ورق ومستندات متفرقة لنظام رقمي متكامل. النتيجة نظام full-stack — لوحة تحكم ويب وتطبيق Flutter على نفس الـ backend — بيغطي حوالي 60 أداة متخصصة في 8 مجالات من القانون المصري، ومؤمّن حسب معايير OWASP Top 10 نظرًا لحساسية البيانات القانونية.</p>
+            <div class="work-stack"><span>Flutter</span><span>JWT + تخزين آمن</span><span>+60 أداة</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Confidential%20project%20—%20Law%20Office%20System" data-cursor="link">سري — التفاصيل عند الطلب ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. TERVYX -->
+      <article class="work-card reveal-up tilt" data-category="ai">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="assets/n8n/tervyx-workflow.jpg" alt="workflow خاص بـ TERVYX على n8n">
+            <div class="work-media-badges">
+              <span class="mock-badge">03</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">أمان بالذكاء الاصطناعي</span>
+            <h3>TERVYX</h3>
+            <p>المواقع الصغيرة والمشاريع المستقلة مش قادرة تدفع تكلفة جدران حماية بمستوى الشركات الكبيرة، ومعظم الـ WAFs الموجودة ثابتة ومش بتتأقلم مع هجمات جديدة. TERVYX بيشغّل 6 AI agents متخصصة بتشتغل مع بعض عشان تراقب وتحمي المواقع، باستخدام موديلات مجانية عبر OpenRouter بحدود قابلة للتحكم — حماية بمستوى الشركات الكبيرة بتكلفة بسيطة.</p>
+            <div class="work-stack"><span>6 AI agents</span><span>OpenRouter</span><span>Rate limiting</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20TERVYX" data-cursor="link">الرابط عند الطلب ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Followly.ai -->
+      <article class="work-card reveal-up tilt" data-category="ai">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="assets/folloly/landing.jpg" alt="الصفحة الرئيسية لـ Followly.ai">
+            <div class="work-media-badges">
+              <span class="mock-badge">04</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">CRM بالذكاء الاصطناعي</span>
+            <h3>Followly.ai</h3>
+            <p>الفريلانسرز والشركات الصغيرة بيخسروا صفقات مش عشان قلة العملاء المحتملين، لكن عشان المتابعة غير المنتظمة. Followly بيقيّم كل عميل محتمل أوتوماتيكيًا، بيتابع خط سير على شكل Kanban، بيظهرله المتابعات المتأخرة، وبيستخدم Gemini عشان يلخص النشاط، يقترح الخطوة الجاية، ويكتب رسائل WhatsApp شخصية — مع عزل كامل لبيانات كل مستخدم عبر Supabase Row Level Security.</p>
+            <div class="work-stack"><span>تقييم العملاء المحتملين</span><span>Gemini AI</span><span>Supabase RLS</span></div>
+            <div class="work-links">
+              <a href="https://followly-ai-gold.vercel.app/" target="_blank" rel="noopener" data-cursor="link">زيارة الموقع اللايف ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Can App -->
+      <article class="work-card reveal-up tilt" data-category="mobile">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot contain" src="assets/can.png" alt="أيقونة تطبيق Can">
+            <div class="work-media-badges">
+              <span class="mock-badge">05</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">موبايل / AI</span>
+            <h3>Can App</h3>
+            <p>أغلب تطبيقات تطوير الذات عبارة عن قوائم ثابتة من غير أي طبقة تكيّف. Can App بيولّد تحدي يومي جديد مخصص للمستخدم بالذكاء الاصطناعي، وبعدين بيتابع وبيسجل الإنجاز — يحوّل تطوير الذات لحلقة مستمرة موجّهة بالـ AI بدل خطة تُنفذ مرة واحدة.</p>
+            <div class="work-stack"><span>Flutter</span><span>تحديات يومية بالـ AI</span><span>تتبع التقدم</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20Can%20App" data-cursor="link">الرابط عند الطلب ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. AI Telegram Assistant -->
+      <article class="work-card reveal-up tilt" data-category="automation">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">06</span>
+              <span class="status-badge status-live">LIVE</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">أتمتة</span>
+            <h3>AI Telegram Assistant</h3>
+            <p>أغلب بوتات الذكاء الاصطناعي إما بتكلّف فلوس مع الاستخدام الكبير أو بتفقد سياق المحادثة. البوت ده شغال بالكامل على أدوات مجانية: الرسايل بتمر عبر n8n AI Agent (Gemini) بذاكرة دائمة في Postgres، بحث لحظي على الويب عبر Tavily، تسجيل المهام في Notion، نشر على فيسبوك عبر Graph API، وكل محادثة بتتحفظ أوتوماتيك في Obsidian.</p>
+            <div class="work-stack"><span>n8n</span><span>Gemini</span><span>ذاكرة Postgres</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20AI%20Telegram%20Assistant" data-cursor="link">الرابط عند الطلب ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Multi-Agent Company -->
+      <article class="work-card reveal-up tilt" data-category="automation">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="assets/multi-agent-workflow.jpg" alt="workflow على n8n بعشرات العقد لـ AI agents">
+            <div class="work-media-badges">
+              <span class="mock-badge">07</span>
+              <span class="status-badge status-dev">IN DEV</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">تجربة أتمتة</span>
+            <h3>Multi-Agent Company</h3>
+            <p>استكشاف لحد فين ممكن الـ multi-agent orchestration يوصل: هل نظام أتمتة واحد يقدر يحاكي فعليًا تقسيم العمل جوه شركة تقنية حقيقية؟ الـ workflow ده على n8n بينسّق حوالي 100 AI agent، كل واحد ليه دور بيعكس منصب حقيقي — مطورين، متخصصين أمن، مهندسين AI — بيشتغلوا مع بعض على المهام.</p>
+            <div class="work-stack"><span>n8n</span><span>~100 agent</span><span>تنسيق الأدوار</span></div>
+            <div class="work-links">
+              <span class="work-status-note">تحت التطوير</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Pet Health & Tech Store -->
+      <article class="work-card reveal-up tilt" data-category="web">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">08</span>
+              <span class="status-badge status-setup">IN SETUP</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">تجارة إلكترونية</span>
+            <h3>Pet Health &amp; Tech Store</h3>
+            <p>بدل ما أخمّن مجال، المتجر ده طلع من عملية بحث سوق منظمة قارنت بين 20 مجال مرشّح. مجال صحة وتكنولوجيا الحيوانات الأليفة طلع الأنسب، والمتجر بيتبنى دلوقتي على Shopify.</p>
+            <div class="work-stack"><span>Shopify</span><span>بحث سوق</span></div>
+            <div class="work-links">
+              <span class="work-status-note">تحت الإعداد</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="contact-frame">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <div class="section-head center">
+        <span class="section-index">// 05</span>
+        <h2 class="section-title reveal-up">يلا <span class="text-accent">نبني حاجة</span></h2>
+        <p class="section-desc reveal-up">عندك مشروع في بالك، أو محتاج نظام يتبني؟ ابعتلي رسالة.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal-up" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم</label>
+              <input type="text" name="name" placeholder="اسمك الكامل" required>
+            </div>
+            <div class="form-group">
+              <label>البريد الإلكتروني</label>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>الموضوع</label>
+            <input type="text" name="subject" placeholder="عاوز أعمل إيه؟">
+          </div>
+          <div class="form-group">
+            <label>الرسالة</label>
+            <textarea name="message" rows="5" placeholder="احكيلي عن مشروعك..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic" data-cursor="button">
+            <span>إرسال الرسالة</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">البريد</p>
+            <a href="mailto:ramezoffice814@gmail.com" class="info-link">ramezoffice814@gmail.com</a>
+          </div>
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">الهاتف</p>
+            <a href="tel:+201200365515" class="info-link">+20 120 036 5515</a>
+          </div>
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">الحالة</p>
+            <p class="info-value"><span class="status-dot"></span> 7 أنظمة شغالة، واحد قيد التطوير — متاح لشغل جديد</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> رامز. كل الحقوق محفوظة.</p>
+  <button class="to-top magnetic" id="toTop" aria-label="scroll to top" data-cursor="button">↑</button>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

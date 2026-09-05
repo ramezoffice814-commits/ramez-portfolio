@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAMEZ // AI-Driven Systems Builder</title>
+<meta name="description" content="Ramez — CIS student building production platforms: marketplaces, CRMs, security firewalls, and multi-agent automation, with AI as the build partner.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>">
+</head>
+<body>
+
+<!-- ===== PRELOADER ===== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">R<span>/</span>X</div>
+    <div class="preloader-bar"><span id="preloaderFill"></span></div>
+    <div class="preloader-percent" id="preloaderPercent">00%</div>
+  </div>
+  <div class="preloader-lines">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<!-- ===== CUSTOM CURSOR ===== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== BACKGROUND FX ===== -->
+<canvas id="bgCanvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="scanline"></div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <a href="#home" class="nav-logo" data-cursor="link">
+    <span class="logo-bracket">[</span>RAMEZ<span class="logo-bracket">]</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#home" class="nav-link active" data-cursor="link"><span>01</span> Home</a>
+    <a href="#about" class="nav-link" data-cursor="link"><span>02</span> About</a>
+    <a href="#stack" class="nav-link" data-cursor="link"><span>03</span> Stack</a>
+    <a href="#work" class="nav-link" data-cursor="link"><span>04</span> Work</a>
+    <a href="#contact" class="nav-link" data-cursor="link"><span>05</span> Contact</a>
+  </nav>
+  <div class="nav-status">
+    <span class="status-dot"></span> Open to work
+  </div>
+  <a href="../index.html" class="lang-switch" data-cursor="link">AR</a>
+  <button class="nav-toggle" id="navToggle" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-frame">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+    </div>
+
+    <div class="hero-meta hero-meta-left">
+      <p class="vertical-text">SYSTEM.ONLINE_</p>
+    </div>
+    <div class="hero-meta hero-meta-right">
+      <p class="vertical-text">EST.2026_</p>
+    </div>
+
+    <div class="hero-inner">
+      <p class="hero-eyebrow reveal-up">
+        <span class="eyebrow-dot"></span> RAMEZ / BUILDER LOG — REV. 2026
+      </p>
+
+      <h1 class="hero-title">
+        <span class="line reveal-up">I design and ship</span>
+        <span class="line reveal-up glitch-wrap">
+          <span class="glitch-text" data-text="AI-driven systems,">AI-driven systems,</span>
+        </span>
+        <span class="line reveal-up">not just apps.</span>
+      </h1>
+
+      <p class="hero-desc reveal-up">
+        CIS student building production platforms — marketplaces, CRMs, security firewalls,
+        and multi-agent automation — with AI as the build partner, not the pitch.
+      </p>
+
+      <div class="hero-cta reveal-up">
+        <a href="#work" class="btn btn-primary magnetic" data-cursor="button">
+          <span>View my work</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost magnetic" data-cursor="button">
+          <span>Get in touch</span>
+        </a>
+      </div>
+
+      <div class="info-strip reveal-up">
+        <div class="info-strip-item">
+          <p class="info-strip-label">Discipline</p>
+          <p class="info-strip-value">Web · Flutter · Automation</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">Current Focus</p>
+          <p class="info-strip-value">AI agent orchestration</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">Status</p>
+          <p class="info-strip-value">7 live systems, 1 in dev</p>
+        </div>
+        <div class="info-strip-item">
+          <p class="info-strip-label">Based</p>
+          <p class="info-strip-value">Egypt</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>SCROLL TO EXPLORE</span>
+      <div class="scroll-line"><span></span></div>
+    </div>
+
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>FLUTTER&nbsp;•&nbsp;NEXT.JS&nbsp;•&nbsp;SUPABASE&nbsp;•&nbsp;GEMINI&nbsp;•&nbsp;OPENROUTER&nbsp;•&nbsp;N8N&nbsp;•&nbsp;META ADS&nbsp;•&nbsp;</span>
+        <span>FLUTTER&nbsp;•&nbsp;NEXT.JS&nbsp;•&nbsp;SUPABASE&nbsp;•&nbsp;GEMINI&nbsp;•&nbsp;OPENROUTER&nbsp;•&nbsp;N8N&nbsp;•&nbsp;META ADS&nbsp;•&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <span class="section-index">// 02</span>
+      <h2 class="section-title reveal-up">About <span class="text-accent">Me</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual reveal-up">
+        <div class="about-card">
+          <div class="about-card-glow"></div>
+          <div class="orbit-wrap">
+            <div class="orbit orbit-1"><span class="orbit-dot">⚛</span></div>
+            <div class="orbit orbit-2"><span class="orbit-dot">▲</span></div>
+            <div class="orbit orbit-3"><span class="orbit-dot">◆</span></div>
+            <div class="core">
+              <span>&lt;/&gt;</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>builder.json</p>
+          </div>
+          <pre class="terminal-body"><code>{
+  "name": "Ramez",
+  "role": "CIS Student / Builder",
+  "based_in": "Egypt",
+  "stack": ["Flutter","Next.js","Supabase"],
+  "focus": "multi-agent orchestration",
+  "systems_live": 7,
+  "coffee_level": "critical"
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <p class="about-lead reveal-up">
+          I'm a second-year CIS student, but most of my work happens outside the classroom.
+          I build real, running platforms — marketplaces, CRMs, security tools, and automation
+          systems — for actual users and clients, not coursework.
+        </p>
+        <p class="about-text reveal-up">
+          My approach is AI-assisted development: I use AI tools to move fast, but every system
+          I ship is one I understand end to end — the architecture, the tradeoffs, and the failure
+          modes. Alongside development I run paid social campaigns, so I think about products as
+          things that need to acquire users, not just function.
+        </p>
+        <p class="about-text reveal-up">
+          Right now I'm going deeper into multi-agent orchestration — coordinating dozens of
+          specialized AI agents to do work a single model can't handle alone.
+        </p>
+
+        <div class="about-info reveal-up">
+          <div class="info-item">
+            <p class="info-label">Name</p>
+            <p class="info-value">Ramez</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">Email</p>
+            <p class="info-value">ramezoffice814@gmail.com</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">Location</p>
+            <p class="info-value">Egypt</p>
+          </div>
+          <div class="info-item">
+            <p class="info-label">Availability</p>
+            <p class="info-value"><span class="status-dot"></span> Open to work</p>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary magnetic reveal-up" data-cursor="button">
+          <span>Let's talk</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE STACK ===== -->
+  <section class="section stack" id="stack">
+    <div class="section-head">
+      <span class="section-index">// 03</span>
+      <h2 class="section-title reveal-up">Core <span class="text-accent">Stack</span></h2>
+      <p class="section-desc reveal-up">The tools I actually ship with — not a checklist, a working pipeline.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">📱</span>
+        <p class="stack-label">Mobile</p>
+        <p class="stack-value">Flutter</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🌐</span>
+        <p class="stack-label">Web</p>
+        <p class="stack-value">Next.js</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🗄</span>
+        <p class="stack-label">Backend / DB</p>
+        <p class="stack-value">Supabase</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">🤖</span>
+        <p class="stack-label">AI</p>
+        <p class="stack-value">Gemini, OpenRouter</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">⚙</span>
+        <p class="stack-label">Automation</p>
+        <p class="stack-value">n8n</p>
+      </div>
+      <div class="stack-card reveal-up">
+        <span class="stack-icon">📈</span>
+        <p class="stack-label">Growth</p>
+        <p class="stack-value">Meta Ads</p>
+      </div>
+    </div>
+
+    <div class="tech-orbit-strip reveal-up">
+      <div class="tech-chip">Flutter</div>
+      <div class="tech-chip">Next.js</div>
+      <div class="tech-chip">Supabase</div>
+      <div class="tech-chip">Gemini</div>
+      <div class="tech-chip">OpenRouter</div>
+      <div class="tech-chip">n8n</div>
+      <div class="tech-chip">Row Level Security</div>
+      <div class="tech-chip">JWT</div>
+      <div class="tech-chip">OWASP Top 10</div>
+      <div class="tech-chip">Postgres</div>
+      <div class="tech-chip">Tavily</div>
+      <div class="tech-chip">Shopify</div>
+      <div class="tech-chip">Meta Ads</div>
+    </div>
+  </section>
+
+  <!-- ===== WORK / PROJECTS ===== -->
+  <section class="section work" id="work">
+    <div class="section-head">
+      <span class="section-index">// 04</span>
+      <h2 class="section-title reveal-up">Selected <span class="text-accent">Work</span></h2>
+      <p class="section-desc reveal-up">Eight systems, built for real users — from live marketplaces to a 100-agent automation experiment.</p>
+    </div>
+
+    <div class="filter-bar reveal-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- 1. SUCCESS Marketplace -->
+      <article class="work-card reveal-up tilt" data-category="web">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="../assets/succses/landing.jpg" alt="SUCCESS Marketplace landing page">
+            <div class="work-media-badges">
+              <span class="mock-badge">01</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Marketplace</span>
+            <h3>SUCCESS Marketplace</h3>
+            <p class="work-oneliner">A trust-focused marketplace for buying and selling websites and dev projects.</p>
+            <p>Buyers of websites and dev projects have no reliable way to verify what they're purchasing before paying. SUCCESS solves this with admin-reviewed listings, verified downloads, and a buyer library — every listing is checked before it goes live, and only real purchasers can leave a review.</p>
+            <div class="work-stack"><span>Admin-reviewed listings</span><span>Verified reviews</span><span>Buyer library</span></div>
+            <div class="work-links">
+              <a href="https://success-marketplace.onrender.com/" target="_blank" rel="noopener" data-cursor="link">Visit Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Law Office Management System -->
+      <article class="work-card reveal-up tilt" data-category="mobile">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">02</span>
+              <span class="status-badge status-live">LIVE</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Client Project — Private</span>
+            <h3>Law Office Management System</h3>
+            <p>A law office needed to digitize common legal workflows instead of relying on scattered documents. The result is a full-stack system — web dashboard and Flutter app on the same backend — covering ~60 specialized tools across 8 practice areas of Egyptian law, hardened to OWASP Top 10 given the sensitivity of legal data.</p>
+            <div class="work-stack"><span>Flutter</span><span>JWT + secure storage</span><span>60+ tools</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Confidential%20project%20—%20Law%20Office%20System" data-cursor="link">Confidential — details on request ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. TERVYX -->
+      <article class="work-card reveal-up tilt" data-category="ai">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="../assets/n8n/tervyx-workflow.jpg" alt="TERVYX AI security agents n8n workflow">
+            <div class="work-media-badges">
+              <span class="mock-badge">03</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">AI Security</span>
+            <h3>TERVYX</h3>
+            <p>Small sites and indie projects can't afford enterprise-grade firewalls, and most existing WAFs are static and don't adapt to new attacks. TERVYX runs 6 specialized AI agents that work together to monitor and defend websites, using free models via OpenRouter with configurable limits — enterprise-style protection at low cost.</p>
+            <div class="work-stack"><span>6 AI agents</span><span>OpenRouter</span><span>Rate limiting</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20TERVYX" data-cursor="link">Link on request ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Followly.ai -->
+      <article class="work-card reveal-up tilt" data-category="ai">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="../assets/folloly/landing.jpg" alt="Followly.ai landing page">
+            <div class="work-media-badges">
+              <span class="mock-badge">04</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">AI CRM</span>
+            <h3>Followly.ai</h3>
+            <p>Freelancers and small businesses lose deals not from lacking leads but from inconsistent follow-up. Followly scores every lead automatically, tracks a Kanban pipeline, surfaces overdue follow-ups, and uses Gemini to summarize activity, suggest next steps, and draft personalized WhatsApp messages — with per-user data isolation via Supabase Row Level Security.</p>
+            <div class="work-stack"><span>Lead scoring</span><span>Gemini AI</span><span>Supabase RLS</span></div>
+            <div class="work-links">
+              <a href="https://followly-ai-gold.vercel.app/" target="_blank" rel="noopener" data-cursor="link">Visit Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Can App -->
+      <article class="work-card reveal-up tilt" data-category="mobile">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot contain" src="../assets/can.png" alt="Can App icon">
+            <div class="work-media-badges">
+              <span class="mock-badge">05</span>
+              <span class="status-badge status-live">LIVE</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Mobile / AI</span>
+            <h3>Can App</h3>
+            <p>Most self-improvement apps are static checklists with no adaptive layer. Can App generates a fresh daily challenge tailored to the user with AI, then monitors and tracks completion — turning self-improvement into an ongoing AI-guided loop instead of a one-time plan.</p>
+            <div class="work-stack"><span>Flutter</span><span>Daily AI challenges</span><span>Progress tracking</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20Can%20App" data-cursor="link">Link on request ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. AI Telegram Assistant -->
+      <article class="work-card reveal-up tilt" data-category="automation">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">06</span>
+              <span class="status-badge status-live">LIVE</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Automation</span>
+            <h3>AI Telegram Assistant</h3>
+            <p>Most AI bots either cost money at scale or lose context between conversations. This one runs entirely on free tools: messages flow through an n8n AI Agent (Gemini) with persistent memory in Postgres, live web search via Tavily, task logging to Notion, Facebook posting via the Graph API, and every conversation auto-saved to Obsidian.</p>
+            <div class="work-stack"><span>n8n</span><span>Gemini</span><span>Postgres memory</span></div>
+            <div class="work-links">
+              <a href="mailto:ramezoffice814@gmail.com?subject=Link%20request%20—%20AI%20Telegram%20Assistant" data-cursor="link">Link on request ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Multi-Agent Company -->
+      <article class="work-card reveal-up tilt" data-category="automation">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <img class="work-screenshot" src="../assets/multi-agent-workflow.jpg" alt="Multi-Agent Company n8n workflow with dozens of AI agent nodes">
+            <div class="work-media-badges">
+              <span class="mock-badge">07</span>
+              <span class="status-badge status-dev">IN DEV</span>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">Automation Experiment</span>
+            <h3>Multi-Agent Company</h3>
+            <p>Exploring how far multi-agent orchestration can scale: can one automation system realistically simulate the division of labor inside a real tech company? This n8n workflow coordinates around 100 AI agents, each assigned a role mirroring a real org — developers, security specialists, AI engineers — working together on tasks.</p>
+            <div class="work-stack"><span>n8n</span><span>~100 agents</span><span>Role orchestration</span></div>
+            <div class="work-links">
+              <span class="work-status-note">In development</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Pet Health & Tech Store -->
+      <article class="work-card reveal-up tilt" data-category="web">
+        <div class="work-card-inner">
+          <div class="work-media">
+            <div class="work-glow"></div>
+            <div class="work-mock">
+              <span class="mock-badge">08</span>
+              <span class="status-badge status-setup">IN SETUP</span>
+              <div class="mock-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="work-body">
+            <span class="work-tag">E-commerce</span>
+            <h3>Pet Health &amp; Tech Store</h3>
+            <p>Rather than guessing a niche, this store came out of a structured market research process comparing 20 candidate niches. Pet health &amp; tech was selected as the strongest fit, and the store is being built on Shopify.</p>
+            <div class="work-stack"><span>Shopify</span><span>Market research</span></div>
+            <div class="work-links">
+              <span class="work-status-note">In setup</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="contact-frame">
+      <span class="frame-corner tl"></span>
+      <span class="frame-corner tr"></span>
+      <span class="frame-corner bl"></span>
+      <span class="frame-corner br"></span>
+
+      <div class="section-head center">
+        <span class="section-index">// 05</span>
+        <h2 class="section-title reveal-up">Let's <span class="text-accent">build something</span></h2>
+        <p class="section-desc reveal-up">Have a project in mind, or need a system shipped? Send a message.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal-up" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="What are you building?">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic" data-cursor="button">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">Email</p>
+            <a href="mailto:ramezoffice814@gmail.com" class="info-link">ramezoffice814@gmail.com</a>
+          </div>
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">Phone</p>
+            <a href="tel:+201200365515" class="info-link">+20 120 036 5515</a>
+          </div>
+          <div class="contact-info-item reveal-up">
+            <p class="info-label">Status</p>
+            <p class="info-value"><span class="status-dot"></span> 7 live systems, 1 in dev — open to new work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Ramez. All rights reserved.</p>
+  <button class="to-top magnetic" id="toTop" aria-label="scroll to top" data-cursor="button">↑</button>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
