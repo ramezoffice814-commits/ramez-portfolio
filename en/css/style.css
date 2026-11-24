@@ -1004,3 +1004,12 @@ main, .navbar, .footer { position: relative; z-index: 2; }
   .hero-cta { margin-top: 28px; }
   .info-strip { margin-top: 32px; }
 }
+
+/* ============ STORE ============ */
+.store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px) { .store-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .store-grid { grid-template-columns: 1fr; } }
+.store-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); font-size: 0.95rem; transition: border-color .25s, transform .25s; }
+.store-item:hover { border-color: var(--accent); transform: translateY(-3px); }
+.store-item b { font-family: var(--font-mono); color: var(--accent); font-weight: 500; white-space: nowrap; }
+.store-all { text-align: center; margin-top: 32px; }
